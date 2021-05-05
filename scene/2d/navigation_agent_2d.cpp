@@ -89,7 +89,7 @@ void NavigationAgent2D::_bind_methods() {
 
 void NavigationAgent2D::_notification(int p_what) {
 	switch (p_what) {
-		case NOTIFICATION_READY: {
+		case NOTIFICATION_ENTER_TREE: {
 			agent_parent = Object::cast_to<Node2D>(get_parent());
 
 			Navigation2DServer::get_singleton()->agent_set_callback(agent, this, "_avoidance_done");
